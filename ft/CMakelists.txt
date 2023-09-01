@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.13)  # CMake version check
+project(simple_example)               # Create project "simple_example"
+set(CMAKE_CXX_STANDARD 17)            # Enable c++17 standard
+
+# CMakeLists.txt
+
+set(CMAKE_OSX_ARCHITECTURES "arm64")
+
+add_subdirectory(third_party/googletest)
+#target_include_directories(MyTests PRIVATE ./third_party/googletest/googletest/include)
+include_directories(third_party/googletest/googletest/include)
+set(GTEST_LIB gtest gtest_main)
+# 添加测试目标
+add_executable(MyTests main.cpp)
+
+
+#target_link_directories(MyTests PRIVATE /Users/lanyingsu/Documents/dev/cpp/googletest/build/lib)
+target_link_libraries(MyTests gtest gtest_main)
