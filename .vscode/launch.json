@@ -7,7 +7,7 @@
       "request": "launch",
       "args": [],
       "cwd": "/Users/lanyingsu/Documents/dev/cpp/perfect_cpp",
-      "program": "/Users/lanyingsu/Documents/dev/cpp/perfect_cpp/build/Debug/outDebug"
+      "program": "/Users/lanyingsu/Documents/dev/cpp/perfect_cpp/ft/build/MyTests"
     }
   ]
 }

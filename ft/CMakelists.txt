@@ -1,7 +1,11 @@
 cmake_minimum_required(VERSION 3.13)  # CMake version check
 project(simple_example)               # Create project "simple_example"
 set(CMAKE_CXX_STANDARD 17)            # Enable c++17 standard
+# 设置构建类型为Debug
+set(CMAKE_BUILD_TYPE Debug)
 
+# 添加其他的CMake配置和目标
+# ...
 # CMakeLists.txt
 
 set(CMAKE_OSX_ARCHITECTURES "arm64")
