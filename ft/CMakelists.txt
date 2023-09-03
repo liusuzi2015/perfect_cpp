@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.13)  # CMake version check
 project(simple_example)               # Create project "simple_example"
-set(CMAKE_CXX_STANDARD 17)            # Enable c++17 standard
+set(CMAKE_CXX_STANDARD 20)            # Enable c++17 standard
 # 设置构建类型为Debug
 set(CMAKE_BUILD_TYPE Debug)
 
@@ -13,9 +13,21 @@ set(CMAKE_OSX_ARCHITECTURES "arm64")
 add_subdirectory(third_party/googletest)
 #target_include_directories(MyTests PRIVATE ./third_party/googletest/googletest/include)
 include_directories(third_party/googletest/googletest/include)
+include_directories(test_cases)
 set(GTEST_LIB gtest gtest_main)
 # 添加测试目标
-add_executable(MyTests main.cpp)
+
+# 设置源文件目录
+set(SOURCES_DIR "/Users/lanyingsu/Documents/dev/cpp/perfect_cpp/ft/test_cases")  # 替换为您的源文件所在的目录
+
+# 获取指定目录下的所有源文件
+file(GLOB_RECURSE SOURCES "${SOURCES_DIR}/*.c" "${SOURCES_DIR}/*.cpp")
+
+# 创建一个可执行文件
+add_executable(my_program ${SOURCES})
+
+# 添加可执行文件或库
+add_executable(MyTests main.cpp ${SOURCES})
 
 
 #target_link_directories(MyTests PRIVATE /Users/lanyingsu/Documents/dev/cpp/googletest/build/lib)
